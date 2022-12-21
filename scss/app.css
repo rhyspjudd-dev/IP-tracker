@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif !important;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+@media screen and (min-width: 576px) and (max-width: 944px) and (orientation: landscape) {
+  main {
+    overflow: hidden;
+  }
+}
+
+header {
+  background: url("../images/pattern-bg.png") left no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 35vh;
+  max-height: 40vh;
+  padding: 8%;
+  display: grid;
+}
+@media screen and (min-width: 576px) and (max-width: 944px) and (orientation: landscape) {
+  header {
+    padding: unset;
+  }
+}
+@media (min-width: 992px) {
+  header {
+    padding: 4%;
+  }
+}
+header .container {
+  width: 100%;
+  padding: unset;
+}
+header h1 {
+  color: #fff;
+  line-height: 4.8rem;
+  margin-top: -2vh;
+  font-family: "Rubik", sans-serif !important;
+  font-weight: 400;
+}
+@media (max-width: 375px) {
+  header h1 {
+    line-height: 2.4rem;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 944px) and (orientation: landscape) {
+  header h1 {
+    margin-top: unset;
+    line-height: 3.8rem;
+  }
+}
+header .form-control {
+  line-height: 3.2rem;
+  padding-left: 25px;
+  border-radius: 1.375rem;
+}
+@media (max-width: 375px) {
+  header .form-control {
+    line-height: 2.2rem;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 944px) and (orientation: landscape) {
+  header .form-control {
+    line-height: 2.2rem;
+  }
+}
+header .input-box {
+  position: relative;
+  width: 100%;
+  max-width: 570px;
+}
+@media (min-width: 768px) {
+  header .input-box {
+    margin: auto;
+  }
+}
+header .input-box span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;
+  background: hsl(0deg, 0%, 17%);
+  border-top-right-radius: 1.375rem;
+  border-bottom-right-radius: 1.375rem;
+}
+header .input-box span .search-arrow {
+  background: url("../images/icon-arrow.svg") center no-repeat;
+  height: 100%;
+  width: 100%;
+}
+header .input-box input::-moz-placeholder {
+  font-size: 16px;
+  color: hsl(0deg, 0%, 59%);
+  border: none;
+  outline: none;
+  font-family: "Rubik", sans-serif !important;
+}
+header .input-box input:-ms-input-placeholder {
+  font-size: 16px;
+  color: hsl(0deg, 0%, 59%);
+  border: none;
+  outline: none;
+  font-family: "Rubik", sans-serif !important;
+}
+header .input-box input::placeholder {
+  font-size: 16px;
+  color: hsl(0deg, 0%, 59%);
+  border: none;
+  outline: none;
+  font-family: "Rubik", sans-serif !important;
+}
+
+#resultsOutput {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  padding: 8%;
+  top: 20vh;
+}
+@media (max-width: 375px) {
+  #resultsOutput {
+    top: 15vh;
+  }
+}
+@media (min-width: 992px) {
+  #resultsOutput {
+    padding: 4%;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 944px) and (orientation: landscape) {
+  #resultsOutput {
+    width: 50%;
+  }
+}
+#resultsOutput .grid {
+  display: grid;
+  grid-template-rows: repeat(auto);
+  background: #fff;
+  text-align: center;
+  padding: 8%;
+  border-radius: 1.375rem;
+}
+@media (min-width: 992px) {
+  #resultsOutput .grid {
+    text-align: left;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px;
+    padding: 4%;
+    max-width: 80vw;
+    margin: auto;
+  }
+}
+#resultsOutput .grid p {
+  color: hsl(0deg, 0%, 59%);
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  position: relative;
+}
+#resultsOutput .grid p span {
+  color: hsl(0deg, 0%, 17%);
+  font-size: 21px;
+  font-weight: 500;
+  margin: 30px 0;
+}
+@media (max-width: 375px) {
+  #resultsOutput .grid p span {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 944px) and (orientation: landscape) {
+  #resultsOutput .grid p span {
+    font-size: 11px;
+  }
+}
+@media (min-width: 992px) {
+  #resultsOutput .grid p:after {
+    content: "";
+    border-right: 2px solid hsl(0deg, 0%, 59%);
+    position: absolute;
+    height: 40px;
+    top: 20px;
+    right: 0;
+    opacity: 0.4;
+  }
+}
+#resultsOutput .grid p:last-of-type:after {
+  visibility: hidden;
+}
+
+#map {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 65vh;
+}
+#map .leaflet-control-container {
+  position: absolute;
+  bottom: 10vh;
+  left: 0;
+  display: none;
+}/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+$margin: 30px 0;
+$veryDarkGray: hsl(0, 0%, 17%);
+$darkGray: hsl(0, 0%, 59%);
+$white: #fff;
+$padding-8: 8%;
+$padding-4: 4%;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif !important;
+}
+main {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    @media screen and (min-width:576px) and (max-width: 944px) and (orientation:landscape){
+        overflow: hidden;
+    }
+}
+header {
+    background: url('../images/pattern-bg.png') left no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 35vh;
+    max-height: 40vh;
+    padding: $padding-8;
+    display: grid;
+    @media screen and (min-width:576px) and (max-width: 944px) and (orientation:landscape){
+        padding: unset;
+    }
+    @media (min-width: 992px) { 
+        padding: $padding-4;
+     }
+    .container { 
+        width: 100%; 
+        padding: unset;
+    }
+    h1 {
+        color: $white;
+        line-height: 4.8rem;
+        margin-top: -2vh;
+        font-family: 'Rubik', sans-serif !important;
+        font-weight: 400;
+        @media (max-width: 375px) { 
+            line-height: 2.4rem;
+         }
+        @media screen and (min-width:576px) and (max-width: 944px) and (orientation:landscape){
+            margin-top: unset;
+            line-height: 3.8rem;
+        }
+    }
+    .form-control {
+        line-height: 3.2rem;
+        padding-left: 25px;
+        border-radius: 1.375rem;
+        @media (max-width: 375px) { 
+            line-height: 2.2rem;
+         }
+        @media screen and (min-width:576px) and (max-width: 944px) and (orientation:landscape){
+            line-height: 2.2rem;
+        }
+    }
+    .input-box {
+        position: relative;
+        width: 100%;
+        max-width: 570px;
+
+        @media (min-width: 768px) {
+            margin: auto;
+        }
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50px;
+            background: $veryDarkGray;
+            border-top-right-radius: 1.375rem;
+            border-bottom-right-radius: 1.375rem;
+            .search-arrow {
+                background: url('../images/icon-arrow.svg') center no-repeat;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        input {
+            &::placeholder {
+                font-size: 16px;
+                color: $darkGray;
+                border: none;
+                outline: none;
+                font-family: 'Rubik', sans-serif !important;
+            }
+        }
+    }
+}
+
+#resultsOutput {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    padding: $padding-8;
+    top: 20vh;
+
+    @media (max-width: 375px) { 
+        top: 15vh;
+     }
+
+    @media (min-width: 992px) { 
+        padding: $padding-4;
+     }
+
+     @media screen and (min-width:576px) and (max-width: 944px) and (orientation:landscape){
+        width: 50%;
+    }
+    .grid {
+        display: grid;
+        grid-template-rows: repeat(auto);
+        background: $white;
+        text-align: center;
+        padding: $padding-8;
+        border-radius: 1.375rem;
+
+        @media (min-width: 992px) {
+            text-align: left;
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 25px;
+            padding: $padding-4;
+            max-width: 80vw;
+            margin: auto;
+        }
+
+        p {
+            color: $darkGray;
+            font-size: 9px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            position: relative;
+            span {
+                color: $veryDarkGray;
+                font-size: 21px;
+                font-weight: 500;
+                margin: $margin;
+                @media (max-width: 375px) { 
+                    font-size: 16px;
+                 }
+                @media screen and (min-width:576px) and (max-width: 944px) and (orientation:landscape){
+                    font-size: 11px;
+                }
+            }
+
+            &:after {
+                @media (min-width: 992px) {
+                    content: "";
+                    border-right: 2px solid hsl(0deg, 0%, 59%);
+                    position: absolute;
+                    height: 40px;
+                    top: 20px;
+                    right: 0;
+                    opacity: 0.4;
+                }
+            }
+            &:last-of-type {
+                &:after {
+                    visibility: hidden;
+                }
+            }
+        }
+
+    }
+}
+
+#map {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 65vh;
+    .leaflet-control-container {
+        position: absolute;
+        bottom: 10vh;
+        left: 0;
+        display: none;
+    }
+}
+
+
